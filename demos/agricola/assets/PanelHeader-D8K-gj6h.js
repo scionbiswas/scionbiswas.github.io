@@ -1,0 +1,4 @@
+import{j as e}from"./index-BkV_R-9e.js";/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */const l=({children:a,className:s=""})=>e.jsx("span",{"aria-hidden":"true",className:`font-pen text-pen text-[1.375rem] leading-none inline-block -rotate-3 ${s}`,children:a}),i=({title:a,subtitle:s,children:t,note:n})=>e.jsxs("div",{className:"px-5 pt-5 pb-4 border-b-2 border-edge flex flex-col sm:flex-row sm:items-baseline gap-x-6 gap-y-3 justify-between",children:[e.jsxs("div",{className:"min-w-0",children:[e.jsx("h2",{className:"text-2xl font-bold text-ink tracking-[-0.02em] text-balance",children:a}),s&&e.jsx("p",{className:"text-base text-ink-secondary mt-2 max-w-[65ch] leading-relaxed",children:s}),n&&e.jsx(l,{className:"mt-2 ml-1",children:n})]}),t&&e.jsx("div",{className:"shrink-0",children:t})]});export{l as P,i as a};

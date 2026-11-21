@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Only real pages. Demos and client mockups are noindex, so they stay out. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://scionbiswas.github.io/</loc></url>
+  <url><loc>https://scionbiswas.github.io/work/agricola/</loc></url>
+  <!-- One per entry in src/data/industries.ts. -->
+  <url><loc>https://scionbiswas.github.io/websites/cafes-and-bakeries/</loc></url>
+  <url><loc>https://scionbiswas.github.io/websites/restaurants-and-diners/</loc></url>
+  <url><loc>https://scionbiswas.github.io/websites/landscapers-and-lawn-care/</loc></url>
+  <url><loc>https://scionbiswas.github.io/websites/barbershops/</loc></url>
+  <url><loc>https://scionbiswas.github.io/websites/</loc></url>
+  <url><loc>https://scionbiswas.github.io/websites/thrift-and-vintage-shops/</loc></url>
+  <url><loc>https://scionbiswas.github.io/website-cost-charlotte/</loc></url>
+  <url><loc>https://scionbiswas.github.io/styles/warm-modern/</loc></url>
+  <url><loc>https://scionbiswas.github.io/styles/sustainable/</loc></url>
+  <url><loc>https://scionbiswas.github.io/styles/hand-drawn/</loc></url>
+  <url><loc>https://scionbiswas.github.io/styles/special-creative/</loc></url>
+</urlset>

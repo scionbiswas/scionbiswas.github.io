@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- A coffee-cup ring, roughened so it looks like a real stain. -->
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="4" /><feDisplacementMap in="SourceGraphic" scale="10" /></filter>
+  <g fill="none" stroke="#7a4a1c" stroke-linecap="round" filter="url(#rough)">
+    <circle cx="120" cy="120" r="88" fill="#7a4a1c" fill-opacity=".035" stroke-width="7" stroke-opacity=".2" />
+    <circle cx="123" cy="117" r="81" stroke-width="2.5" stroke-opacity=".16" />
+    <path d="M44 162c-14-30-12-62 8-90" stroke-width="12" stroke-opacity=".1" />
+    <path d="M196 64c10 14 15 30 14 48" stroke-width="4" stroke-opacity=".14" />
+  </g>
+  <circle cx="214" cy="190" r="6" fill="#7a4a1c" fill-opacity=".16" filter="url(#rough)" />
+</svg>

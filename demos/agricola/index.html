@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Live demo app; the case study at /work/agricola/ is the page meant to rank. -->
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/demos/agricola/favicon.svg" />
+    <title>Agricola NC | Double your EBT at North Carolina farmers markets</title>
+    <!--
+      Atkinson Hyperlegible — drawn by the Braille Institute for low vision,
+      with deliberately disambiguated characters (1/l/I, 0/O, b/d).
+
+      That is a reason specific to THIS audience, not a house style: SNAP
+      recipients reading a phone outdoors, many elderly, many with limited
+      formal schooling, about half reading Spanish. Latin covers Spanish
+      diacritics, so 400 and 700 together cost ~35KB of woff2 — LESS than the
+      three weights of Public Sans this replaces, which matters because the
+      audience is on metered data.
+
+      400 and 700 are the entire weight vocabulary, because that is all the
+      family ships. Hierarchy comes from size, space and case. If you want a
+      weight in between, the thing is the wrong size.
+
+      Caveat 600 is the pen's hand and only the pen's: margin notes in
+      src/components/PenNote.tsx, never text a reader must read. One weight,
+      budgeted at 45KB, self-hosted from public/fonts by an @font-face in
+      src/index.css (Google's file is 50KB); paperWorld.test.ts pins both.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <!-- Leaflet.js Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- Leaflet.js Script (loaded synchronously so L is available to React) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!--
+      Stamp the theme BEFORE first paint.
+
+      src/index.css resolves the palette off data-theme on <html>, and React
+      cannot run early enough — without this the page paints the light ground
+      and then flips, on every single load, for every dark-mode user.
+
+      localStorage is in its own try/catch because it can be blocked in the AI
+      Studio iframe, which is why every other storage read in this app is too.
+      A failure here just falls through to the OS preference.
+    -->
+    <script>
+      (function () {
+        var choice = 'system';
+        try { choice = localStorage.getItem('app_theme') || 'system'; } catch (e) {}
+        var dark = choice === 'dark'
+          || (choice !== 'light'
+              && window.matchMedia
+              && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
+    <style>
+      /*
+        The desk ground, kept in sync with --color-paper in
+        src/index.css for both themes. This block paints before the stylesheet
+        loads, so it needs its own copy of the two ground colours — the script
+        above has already stamped data-theme by the time this applies.
+
+        If you change --color-paper or --color-ink in src/index.css, change
+        these four values too, or the first paint is the old palette.
+      */
+      body {
+        background-color: #E2E3D0;
+        color: #15180F;
+        font-family: 'Atkinson Hyperlegible', ui-sans-serif, system-ui, sans-serif;
+        /* Money and ZIPs align in columns without needing a separate mono font. */
+        font-variant-numeric: tabular-nums;
+      }
+      html[data-theme="dark"] body {
+        background-color: #16181C;
+        color: #EDE3CF;
+      }
+      /* Leaflet popups inherit the app's body size (16px) rather than shrinking. */
+      .leaflet-popup-content-value {
+        font-size: 1rem;
+      }
+      /* Print specific overrides to hide UI controls */
+      @media print {
+        header, nav, #nav-tabs, button, footer, .no-print {
+          display: none !important;
+        }
+        main {
+          margin: 0 !important;
+          padding: 0 !important;
+          background: white !important;
+        }
+        .print-only {
+          display: block !important;
+        }
+        /* Undo the scroll-linked section fade on paper; see the fuller note in src/index.css. */
+        [data-reveal] {
+          opacity: 1 !important;
+          transform: none !important;
+          translate: none !important;
+          animation: none !important;
+        }
+        /* Likewise for the fade-in keyframes; see src/index.css. */
+        .animate-fade-in {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        /* Plain paper on the printer; see the fuller note in src/index.css. */
+        .sheet::before, .receipt {
+          filter: none !important;
+          background: #ffffff !important;
+          background-image: none !important;
+          box-shadow: none !important;
+          -webkit-mask: none !important;
+          mask: none !important;
+        }
+        .taped::after, .corner-tape, .stapled::after, .sheet-napkin::after, .botanicals, .pen-mark:not(.pen-tick) {
+          display: none !important;
+        }
+        .pen-strike {
+          background-image: none !important;
+        }
+        .desk-grid {
+          display: block !important;
+          background: #ffffff !important;
+        }
+        /* The planner's receipt column; see src/index.css. */
+        div:has(> [data-snap-steps]) {
+          display: block !important;
+        }
+        /* No desk, no cream: white paper; see src/index.css. */
+        .bg-paper, .bg-surface-sunken {
+          background: #ffffff !important;
+          background-image: none !important;
+        }
+        .meal-plan-print-container {
+          width: 100% !important;
+          max-width: 100% !important;
+          box-shadow: none !important;
+          border: none !important;
+          padding: 0 !important;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/demos/agricola/assets/index-BkV_R-9e.js"></script>
+    <link rel="stylesheet" crossorigin href="/demos/agricola/assets/index-BUYpmECK.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+

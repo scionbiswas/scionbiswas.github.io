@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<rect width="390" height="844" fill="#E4E9DC"/>
+<rect width="390" height="100" fill="#fff" fill-opacity=".6"/><rect x="24" y="62" width="110" height="18" rx="4" fill="#A9B89A"/><rect x="330" y="60" width="36" height="22" rx="4" fill="#2b2b2b"/>
+<rect x="24" y="140" width="300" height="34" rx="5" fill="#2b2b2b" fill-opacity=".8"/><rect x="24" y="184" width="230" height="34" rx="5" fill="#2b2b2b" fill-opacity=".8"/>
+<rect x="24" y="240" width="320" height="14" rx="4" fill="#A9B89A"/><rect x="24" y="264" width="280" height="14" rx="4" fill="#A9B89A"/>
+<rect x="24" y="300" width="150" height="46" rx="8" fill="#2b2b2b"/>
+<rect x="24" y="370" width="342" height="300" rx="12" fill="#A9B89A"/>
+<text x="40" y="640" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#2b2b2b">Sustainable demo</text><text x="40" y="664" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#2b2b2b">phone screenshot</text>
+<rect x="24" y="694" width="342" height="120" rx="10" fill="#fff" fill-opacity=".55"/>
+</svg>

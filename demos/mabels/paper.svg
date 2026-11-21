@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320">
+  <!-- Paper texture: fine grain plus soft blotches. Tiles seamlessly. -->
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" stitchTiles="stitch" />
+    <feColorMatrix values="0 0 0 0 .17  0 0 0 0 .12  0 0 0 0 .08  0 0 0 -1.1 .62" />
+  </filter>
+  <filter id="blotch" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".012" numOctaves="3" seed="2" stitchTiles="stitch" />
+    <feColorMatrix values="0 0 0 0 .55  0 0 0 0 .38  0 0 0 0 .16  0 0 0 -.9 .52" />
+  </filter>
+  <rect width="320" height="320" filter="url(#blotch)" opacity=".3" />
+  <rect width="320" height="320" filter="url(#grain)" opacity=".28" />
+</svg>

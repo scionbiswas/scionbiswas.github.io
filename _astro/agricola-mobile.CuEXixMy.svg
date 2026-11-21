@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+  <defs>
+    <pattern id="rule" width="20" height="30" patternUnits="userSpaceOnUse"><path d="M0 29.5h20" stroke="#c9cdb8" stroke-width="1"/></pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#4a5236" flood-opacity=".22"/></filter>
+    <pattern id="awning" width="32" height="24" patternUnits="userSpaceOnUse"><rect width="16" height="24" fill="#17804b"/><rect x="16" width="16" height="24" fill="#f6f1e2"/></pattern>
+  </defs>
+  <rect width="390" height="844" fill="#e2e3d0"/>
+  <g fill="none" stroke="#9aa27e" stroke-width="4" stroke-linecap="round"><path d="M40 844c20-90 50-150 110-210"/></g>
+  <g fill="#9aa27e">
+    <ellipse cx="70" cy="770" rx="24" ry="8" transform="rotate(-45 70 770)"/><ellipse cx="100" cy="705" rx="22" ry="7" transform="rotate(-45 100 705)"/>
+    <ellipse cx="40" cy="735" rx="22" ry="7" transform="rotate(30 40 735)"/><ellipse cx="75" cy="675" rx="20" ry="7" transform="rotate(30 75 675)"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="24" y="150" width="342" height="440" rx="5" fill="#f3eddc"/>
+    <rect x="24" y="150" width="342" height="440" rx="5" fill="url(#rule)"/>
+  </g>
+  <path d="M60 150v440" stroke="#d99c8c" stroke-width="1.5"/>
+  <rect x="84" y="200" width="160" height="24" fill="url(#awning)"/>
+  <path d="M84 224q8 13 16 0t16 0 16 0 16 0 16 0 16 0 16 0 16 0 16 0 16 0" fill="#17804b"/>
+  <text x="84" y="300" font-family="Atkinson Hyperlegible, Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#15180f">Agricola <tspan fill="#17804b">NC</tspan></text>
+  <text font-family="Atkinson Hyperlegible, Segoe UI, Arial, sans-serif" font-size="19" fill="#3b4030">
+    <tspan x="84" y="350">Farmers markets, meal plans</tspan>
+    <tspan x="84" y="378">and food prices for SNAP/EBT</tspan>
+    <tspan x="84" y="406">in North Carolina.</tspan>
+  </text>
+  <rect x="84" y="460" width="190" height="56" rx="7" fill="#17804b"/>
+  <text x="179" y="496" text-anchor="middle" font-family="Atkinson Hyperlegible, Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#fff">Open the app</text>
+</svg>

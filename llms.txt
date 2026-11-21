@@ -1,0 +1,19 @@
+# Website Design By Scion Biswas
+
+> Affordable websites for local small businesses in Charlotte, NC: cafés, bakeries, restaurants, diners, landscapers and barbershops. Mobile-friendly sites start at $250. Contact: scionbiswas.business@gmail.com, 980-529-2633.
+
+## Pages
+
+- [Home](https://scionbiswas.github.io/): styles, sample websites, pricing, add-ons and a quote form
+- [Websites for cafés and bakeries](https://scionbiswas.github.io/websites/cafes-and-bakeries/)
+- [Websites for restaurants and diners](https://scionbiswas.github.io/websites/restaurants-and-diners/)
+- [Websites for landscapers and lawn care](https://scionbiswas.github.io/websites/landscapers-and-lawn-care/)
+- [Websites for barbershops](https://scionbiswas.github.io/websites/barbershops/)
+- [Websites for thrift and vintage shops](https://scionbiswas.github.io/websites/thrift-and-vintage-shops/)
+- [All business types](https://scionbiswas.github.io/websites/)
+- [How much a website costs in Charlotte](https://scionbiswas.github.io/website-cost-charlotte/): one-time prices, add-ons compared with typical freelancers, monthly plans
+- [Warm modern style](https://scionbiswas.github.io/styles/warm-modern/)
+- [Sustainable style](https://scionbiswas.github.io/styles/sustainable/)
+- [Hand-drawn style](https://scionbiswas.github.io/styles/hand-drawn/)
+- [Special creative style](https://scionbiswas.github.io/styles/special-creative/)
+- [Agricola NC case study](https://scionbiswas.github.io/work/agricola/): a free SNAP/EBT food app for North Carolina families

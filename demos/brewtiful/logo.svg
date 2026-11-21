@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 52">
+  <!-- A mug whose handle is split by a middle line, so mug + handle read as "B". -->
+  <g fill="none" stroke="#7a5a43" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="2.2" d="M8 9c-2-2 2-4 0-6M13.5 9c-2-2 2-4 0-6"/>
+    <path stroke-width="3.2" d="M19 17h4a5.5 5.5 0 0 1 0 11h-4M19 28h5.5a6.5 6.5 0 0 1 0 13H19M2 49h28"/>
+  </g>
+  <path d="M3 14h17v24a7 7 0 0 1-7 7H10a7 7 0 0 1-7-7z" fill="#7a5a43"/>
+</svg>
